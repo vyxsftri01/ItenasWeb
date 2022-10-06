@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('nip');
-            $table->foreign('nip')->references('nip')->on('dosens');
+            $table->unsignedBigInteger('id_dosens');
+            $table->foreign('id_dosens')->references('id')->on('dosens');
             $table->string('nama_kls');
             $table->unsignedBigInteger('id_prodis');
             $table->foreign('id_prodis')->references('id')->on('prodis');

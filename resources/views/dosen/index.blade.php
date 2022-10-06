@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive" style="background-color: rgba(253, 152, 79, 0.57); color: #000000;">
+                        <div class="table-responsive" style="background-color: rgba(234, 194, 166, 0.987); color: #000000;">
                             <table class="table align-middle" id="dataTable">
                                 <thead>
                                     <tr>
@@ -29,7 +29,7 @@
                                     @foreach ($dosen as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $data->nip }}</td>
+                                            <td>{{ $data->user->nomorinduk }}</td>
                                             <td>{{ $data->prodi->nama }}</td>
                                             <td>{{ $data->user->name }}</td>
                                             <td>
@@ -41,7 +41,7 @@
                                                         Edit
                                                     </a> |
                                                     <a href="{{ route('dosen.show', $data->id) }}"
-                                                        class="btn btn-sm btn-outline-warning">
+                                                        class="btn btn-sm btn-outline-primary">
                                                         Show
                                                     </a> |
                                                     <button type="submit" class="btn btn-sm btn-outline-danger"

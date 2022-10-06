@@ -14,7 +14,7 @@ class Dosen extends Model
     public function nip()
     {
 
-        return $this->belongsTo(User::class, 'nomorinduk');
+        return $this->belongsTo(User::class, 'id_users');
     }
     public function user()
     {

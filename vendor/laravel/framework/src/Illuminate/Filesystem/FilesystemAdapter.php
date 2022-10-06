@@ -620,10 +620,6 @@ class FilesystemAdapter implements CloudFilesystemContract
      */
     public function url($path)
     {
-        if (isset($this->config['prefix'])) {
-            $path = $this->concatPathToUrl($this->config['prefix'], $path);
-        }
-
         $adapter = $this->adapter;
 
         if (method_exists($adapter, 'getUrl')) {

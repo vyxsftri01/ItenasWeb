@@ -6,10 +6,10 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header" style="background-color: rgba(0, 61, 180, 0.25); color: #000000;">
+                    <div class="card-header" style="background-color: rgba(253, 117, 41, 0.98); color: #000000;">
                         Data dosen
                     </div>
-                    <div class="card-body" style="background-color: rgba(0, 61, 180, 0.08); color: #000000;">
+                    <div class="card-body" style="background-color: rgba(253, 152, 79, 0.57); color: #000000;">
                         <form action="{{ route('dosen.store') }}" method="post">
                             @csrf
                             <div class="mb-3">

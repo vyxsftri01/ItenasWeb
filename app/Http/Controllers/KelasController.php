@@ -11,29 +11,32 @@ class KelasController extends Controller
 {
     public function index()
     {
-        
+
         $kelas = Kelas::all();
         return view('kelas.index', compact('kelas'));
     }
 
     public function create()
     {
-        return view('kelas.create');
+        $dosen = Dosen::all();
+        $prodi = Prodi::all();
+        return view('kelas.create', compact('dosen','prodi'));
+
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nip' => 'required',
-            'nama_kelas' => 'required',
+            'id_dosens' => 'required',
+            'nama_kls' => 'required',
             'id_prodis' => 'required',
-            
-            
+
+
         ]);
 
         $kelas = new Kelas();
-        $kelas->nip = $request->nip;
-        $kelas->nama_kelas = $request->nama_kelas;
+        $kelas->id_dosens = $request->id_dosens;
+        $kelas->nama_kls = $request->nama_kls;
         $kelas->id_prodis = $request->id_prodis;
         $kelas->save();
         return redirect()->route('kelas.index')
@@ -55,15 +58,15 @@ class KelasController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nip' => 'required',
-            'nama_kelas' => 'required',
+            'id_dosens' => 'required',
+            'nama_kls' => 'required',
             'id_prodis' => 'required',
-            
+
         ]);
 
         $kelas = Kelas::findOrFail($id);
-        $kelas->nip = $request->nip;
-        $kelas->nama_kelas = $request->nama_kelas;
+        $kelas->id_dosens = $request->id_dosens;
+        $kelas->nama_kls = $request->nama_kls;
         $kelas->id_prodis = $request->id_prodis;
         $kelas->save();
         return redirect()->route('kelas.index')
