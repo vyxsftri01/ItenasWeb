@@ -22,10 +22,10 @@
                                     </span>
                                 @enderror
                             </div>
-                            
+
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn " type="submit" style="background-color: rgba(253, 117, 41, 0.98); color: #FFFFFF; float: right ">Save</button>
+                                    <button class="btn btn-sm btn-light" type="submit" style=" float: right ">Save</button>
                                 </div>
                             </div>
                         </form>

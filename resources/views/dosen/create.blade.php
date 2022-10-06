@@ -58,7 +58,7 @@
 
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn" type="submit" style="background-color: rgba(0, 61, 180, 0.18); color: #FFFFFF; float: right ">Save</button>
+                                    <button class="btn btn-sm btn-light" type="submit" style=" float: right ">Save</button>
                                 </div>
                             </div>
                         </form>

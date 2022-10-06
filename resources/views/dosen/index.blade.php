@@ -5,15 +5,15 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card border-secondary">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: rgba(253, 117, 41, 0.98); color: #000000;">
                         Data Siswa
-                        <a href="{{ route('dosen.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                        <a href="{{ route('dosen.create') }}" class="btn btn-sm btn-light" style="float: right">
                             Tambah Data
                         </a>
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="background-color: rgba(253, 152, 79, 0.57); color: #000000;">
                             <table class="table align-middle" id="dataTable">
                                 <thead>
                                     <tr>
