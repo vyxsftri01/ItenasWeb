@@ -11,14 +11,17 @@ class KoorController extends Controller
 {
     public function index()
     {
-        
+
         $koor = Koor::all();
         return view('koor.index', compact('koor'));
     }
 
     public function create()
     {
-        return view('koor.create');
+        $user = User::all();
+        $prodi = Prodi::all();
+        return view('dosen.create', compact('user','prodi'));
+
     }
 
     public function store(Request $request)
@@ -27,8 +30,8 @@ class KoorController extends Controller
             'nrp' => 'required',
             'id_users' => 'required',
             'id_prodis' => 'required',
-            
-            
+
+
         ]);
 
         $koor = new Koor();
@@ -58,7 +61,7 @@ class KoorController extends Controller
             'nrp' => 'required',
             'id_users' => 'required',
             'id_prodis' => 'required',
-            
+
         ]);
 
         $koor = Koor::findOrFail($id);

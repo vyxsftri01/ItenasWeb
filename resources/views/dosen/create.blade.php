@@ -13,9 +13,13 @@
                         <form action="{{ route('dosen.store') }}" method="post">
                             @csrf
                             <div class="mb-3">
-                                <label class="form-label">Nip</label>
-                                <input type="text" class="form-control  @error('nip') is-invalid @enderror"
-                                    name="nip">
+                                <label class="form-label">NIP</label>
+                                <select name="nip" class="form-control @error('nip') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($user as $data)
+                                        <option value="{{ $data->id }}">{{ $data->nomorinduk }}</option>
+                                    @endforeach
+                                </select>
                                 @error('nip')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -50,8 +54,8 @@
                                     </span>
                                 @enderror
                             </div>
-                            
-                            
+
+
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
                                     <button class="btn" type="submit" style="background-color: rgba(0, 61, 180, 0.18); color: #FFFFFF; float: right ">Save</button>

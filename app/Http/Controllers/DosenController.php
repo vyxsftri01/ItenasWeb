@@ -11,14 +11,17 @@ class DosenController extends Controller
 {
     public function index()
     {
-        
+
         $dosen = Dosen::all();
         return view('dosen.index', compact('dosen'));
     }
 
     public function create()
     {
-        return view('dosen.create');
+        $user = User::all();
+        $prodi = Prodi::all();
+        return view('dosen.create', compact('user','prodi'));
+
     }
 
     public function store(Request $request)
@@ -27,8 +30,8 @@ class DosenController extends Controller
             'nip' => 'required',
             'id_users' => 'required',
             'id_prodis' => 'required',
-            
-            
+
+
         ]);
 
         $dosen = new Dosen();
@@ -49,7 +52,9 @@ class DosenController extends Controller
     public function edit($id)
     {
         $dosen = Dosen::findOrFail($id);
-        return view('dosen.edit', compact('dosen'));
+        $user = User::all();
+        $prodi = Prodi::all();
+        return view('dosen.edit', compact('dosen', 'user', 'prodi'));
     }
 
     public function update(Request $request, $id)
@@ -58,7 +63,7 @@ class DosenController extends Controller
             'nip' => 'required',
             'id_users' => 'required',
             'id_prodis' => 'required',
-            
+
         ]);
 
         $dosen = Dosen::findOrFail($id);
