@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
             $table->string('nip');
-            $table->foreign('nip')->references('nomorinduk')->on('users');
             $table->unsignedBigInteger('id_prodis');
             $table->foreign('id_prodis')->references('id')->on('prodis');
             $table->unsignedBigInteger('id_users');

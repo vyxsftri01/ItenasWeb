@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
             $table->string('nrp');
-            $table->foreign('nrp')->references('nomorinduk')->on('users');
-            
+
             $table->unsignedBigInteger('id_kelas');
             $table->foreign('id_kelas')->references('id')->on('kelas');
 

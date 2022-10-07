@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('koors', function (Blueprint $table) {
             $table->id();
             $table->string('nrp');
-            $table->foreign('nrp')->references('nomorinduk')->on('users');
             $table->unsignedBigInteger('id_prodis');
             $table->foreign('id_prodis')->references('id')->on('prodis');
             $table->unsignedBigInteger('id_users');

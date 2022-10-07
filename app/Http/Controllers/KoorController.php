@@ -20,7 +20,7 @@ class KoorController extends Controller
     {
         $user = User::all();
         $prodi = Prodi::all();
-        return view('dosen.create', compact('user','prodi'));
+        return view('koor.create', compact('user','prodi'));
 
     }
 
@@ -51,8 +51,10 @@ class KoorController extends Controller
 
     public function edit($id)
     {
+        $user = User::all();
+        $prodi = Prodi::all();
         $koor = Koor::findOrFail($id);
-        return view('koor.edit', compact('koor'));
+        return view('koor.edit', compact('koor','prodi','user'));
     }
 
     public function update(Request $request, $id)

@@ -7,7 +7,7 @@
                 <div class="card border-secondary">
                     <div class="card-header" style="background-color: rgba(253, 117, 41, 0.98); color: #000000;">
                         Data Siswa
-                        <a href="{{ route('mahasiswa.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                        <a href="{{ route('mahasiswa.create') }}" class="btn btn-sm btn-light" style="float: right">
                             Tambah Data
                         </a>
                     </div>
@@ -31,11 +31,11 @@
                                     @foreach ($mahasiswa as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $data->nrp }}</td>
-                                            <td>{{ $data->kelas->nama_kls }}</td>
-                                            <td>{{ $data->semester->tingkat }}</td>
-                                            <td>{{ $data->prodi->nama }}</td>
+                                            <td>{{ $data->user->nomorinduk }}</td>
                                             <td>{{ $data->user->name }}</td>
+                                            <td>{{ $data->kelas->nama_kls }}</td>
+                                            <td>{{ $data->prodi->nama }}</td>
+                                            <td>{{ $data->semester->tingkat }}</td>
                                             <td>
                                                 <form action="{{ route('mahasiswa.destroy', $data->id) }}" method="post">
                                                     @csrf
@@ -45,7 +45,7 @@
                                                         Edit
                                                     </a> |
                                                     <a href="{{ route('mahasiswa.show', $data->id) }}"
-                                                        class="btn btn-sm btn-outline-warning">
+                                                        class="btn btn-sm btn-outline-primary">
                                                         Show
                                                     </a> |
                                                     <button type="submit" class="btn btn-sm btn-outline-danger"

@@ -29,7 +29,7 @@
                                     @foreach ($koor as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $data->nrp }}</td>
+                                            <td>{{ $data->user->nomorinduk }}</td>
                                             <td>{{ $data->prodi->nama }}</td>
                                             <td>{{ $data->user->name }}</td>
                                             <td>

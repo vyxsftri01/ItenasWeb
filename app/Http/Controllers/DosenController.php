@@ -35,7 +35,7 @@ class DosenController extends Controller
         ]);
 
         $dosen = new Dosen();
-        $dosen->id_users = $request->nip;
+        $dosen->nip = $request->nip;
         $dosen->id_users = $request->id_users;
         $dosen->id_prodis = $request->id_prodis;
         $dosen->save();

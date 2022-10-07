@@ -7,17 +7,17 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header" style="background-color: rgba(253, 117, 41, 0.98); color: #000000;">
-                        Data semester
+                        Data Prodi
                     </div>
                     <div class="card-body" style="background-color: rgba(253, 152, 79, 0.57);">
-                        <form action="{{ route('semester.update', $semester->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('prodi.update', $prodi->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="mb-3">
-                                <label class="form-label">Semester</label>
-                                <input type="text" class="form-control  @error('tingkat') is-invalid @enderror"
-                                    name="tingkat" value="{{ $semester->tingkat }}">
-                                @error('tingkat')
+                                <label class="form-label">Prodi</label>
+                                <input type="text" class="form-control  @error('nama') is-invalid @enderror"
+                                    name="nama" value="{{ $prodi->nama }}">
+                                @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,7 +26,7 @@
 
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                    <button class="btn btn-light" type="submit">Save</button>
                                 </div>
                             </div>
                         </form>

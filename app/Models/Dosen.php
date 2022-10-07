@@ -11,11 +11,6 @@ class Dosen extends Model
     public $fillable = ['nip', 'id_users', 'id_prodis'];
     public $timestamps = true;
 
-    public function nip()
-    {
-
-        return $this->belongsTo(User::class, 'id_users');
-    }
     public function user()
     {
 
