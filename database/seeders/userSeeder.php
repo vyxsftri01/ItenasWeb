@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use \Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class userSeeder extends Seeder
 {
@@ -15,24 +18,42 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        $user =
-        [
-            // ['nama' => 'Dosen 1', 'nomorinduk' => '001', 'username' => 'Dosen_test', 'email' => 'dosen@itenas.com',
-            // 'no_tlp' => '', 'foto' => '', 'password' => 'dosen123', 'id_role' => '2'],
-            [
-                'name' => 'koor ITENAS',
-                'nomorinduk' => '1001',
-                'username' => 'KoorITENAS',
-                'email' => 'koor@gmail.com',
-                'no_tlp' => '',
-                'foto' => '',
-                'password' => 'koor_itenas'
-                ]
-            
 
-        ];
+        //  ROLE 
 
-        DB::table('users')->insert($user);
+        //Koordinator
+        $rolekoor = new role();
+        $rolekoor->name = 'koordinator';
+        $rolekoor->display_name = 'koor';
+        $rolekoor->description = '-';
+        $rolekoor->save();
+       
+        //Dosen
+        $roledosen = new role();
+        $roledosen->name = 'dosen';
+        $roledosen->display_name = 'dosen';
+        $roledosen->description = '-';
+        $roledosen->save();
+
+        //Mahasiswa
+        $rolemasis = new role();
+        $rolemasis->name = 'mahasiswa';
+        $rolemasis->display_name = 'mahasiswa';
+        $rolemasis->description = '-';
+        $rolemasis->save();
+
+
+        // USER KOOR
+        $koordinator = new User();
+        $koordinator->name = 'kooritenas';
+        $koordinator->nomorinduk = '1001';
+        $koordinator->username = 'kooritenas';
+        $koordinator->email = 'koor@itenas.com';
+        $koordinator->no_tlp = '-';
+        $koordinator->foto= '-';
+        $koordinator->password=Hash::make('kooritenas1');
+        $koordinator->save();
+        
     }
     
 }
