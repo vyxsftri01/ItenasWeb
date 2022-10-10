@@ -48,6 +48,40 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Kelas</label>
+                                <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
+                                    readonly>
+                                    @foreach ($kelas as $data)
+                                        <option value="{{ $data->id }}"
+                                            {{ $data->id == $mahasiswa->id_kelas ? 'selected' : '' }}>
+                                            {{ $data->nama_kls }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('id_kelas')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Semester</label>
+                                <select name="id_semesters" class="form-control @error('id_semesters') is-invalid @enderror"
+                                    readonly>
+                                    @foreach ($semester as $data)
+                                        <option value="{{ $data->id }}"
+                                            {{ $data->id == $mahasiswa->id_semesters ? 'selected' : '' }}>
+                                            {{ $data->tingkat }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('id_semesters')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Prodi</label>
                                 <select name="id_prodis" class="form-control @error('id_prodis') is-invalid @enderror"
                                     readonly>

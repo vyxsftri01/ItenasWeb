@@ -45,7 +45,7 @@ class KoorController extends Controller
 
     public function show($id)
     {
-        $koor = Kor::findOrFail($id);
+        $koor = Koor::findOrFail($id);
         return view('koor.show', compact('koor'));
     }
 

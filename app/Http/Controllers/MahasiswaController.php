@@ -13,7 +13,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        
+
         $mahasiswa = Mahasiswa::all();
         return view('mahasiswa.index', compact('mahasiswa'));
     }
@@ -35,8 +35,8 @@ class MahasiswaController extends Controller
             'id_semesters' => 'required',
             'id_prodis' => 'required',
             'id_users' => 'required',
-            
-            
+
+
         ]);
 
         $mahasiswa = new Mahasiswa();
@@ -58,8 +58,12 @@ class MahasiswaController extends Controller
 
     public function edit($id)
     {
+        $user = User::all();
+        $prodi = Prodi::all();
+        $semester = Semester::all();
+        $kelas = Kelas::all();
         $mahasiswa = Mahasiswa::findOrFail($id);
-        return view('mahasiswa.edit', compact('mahasiswa'));
+        return view('mahasiswa.edit', compact('mahasiswa','kelas','semester','prodi','user'));
     }
 
     public function update(Request $request, $id)
@@ -70,7 +74,7 @@ class MahasiswaController extends Controller
             'id_semesters' => 'required',
             'id_prodis' => 'required',
             'id_users' => 'required',
-            
+
         ]);
 
         $mahasiswa = Mahasiswa::findOrFail($id);
